@@ -1,0 +1,230 @@
+/*
+ * my-tickets.css
+ * Chiptalarim sahifasi uchun uslublar
+ */
+
+.tickets-main-container {
+    padding: 40px 0;
+    background-color: #f4f7f9;
+}
+
+/* Buyurtma kartalarini gridda joylashtirish */
+.order-history-list {
+    display: grid;
+    /* Ekran kengligiga qarab 300px kenglikdagi kartalarni moslash */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.order-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Karta Yuqori Qismi */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #eaf4ff;
+    border-bottom: 1px solid #d0e0ff;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 0.9rem;
+}
+
+.order-status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Holat Ranglari */
+.status-paid {
+    background-color: #d4edda; /* Yashilroq fon */
+    color: #155724;
+}
+.status-pending {
+    background-color: #fff3cd; /* Sariqroq fon */
+    color: #856404;
+}
+
+
+/* Karta Tana Qismi */
+.card-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.order-date, .order-details, .order-total {
+    margin: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.order-date i, .order-details i, .order-total i {
+    margin-right: 5px;
+    color: #007bff;
+}
+
+.order-total strong {
+    color: #dc3545;
+    font-size: 1.1rem;
+}
+
+/* Karta Pastki Qismi */
+.card-footer {
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+    text-align: right;
+}
+
+.secondary-btn {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.secondary-btn:hover {
+    background-color: #e2e6ea;
+}
+
+/* Bo'sh Xabar Uslubi */
+.empty-history-message {
+    text-align: center;
+    padding: 80px 20px;
+    background: #ffffff;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.empty-history-message i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.empty-history-message h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+/* --- Modal (Chek) Uslublari --- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Dastlab yashirilgan */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-height: 90vh; /* Mobil qurilmalar uchun balandlikni cheklash */
+    overflow-y: auto; /* Agar kontent ko'p bo'lsa scroll qo'shish */
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-title {
+    color: #28a745; /* Yashil rang */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.ticket-info-block p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.ticket-hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+}
+
+.ticket-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #f0f0f0;
+    font-size: 1rem;
+}
+
+.ticket-item:last-child {
+    border-bottom: none;
+}
+
+.ticket-summary-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #28a745; /* Yakuniy yashil chiziq */
+}
+
+.summary-line-modal {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.summary-line-modal.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #dc3545;
+    padding-top: 10px;
+}
+
+.contact-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #666;
+}

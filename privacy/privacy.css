@@ -1,0 +1,235 @@
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === ROOT VARIABLES === */
+:root{
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --muted:#55626b;
+    --accent:#1e3c72;
+    --accent-2:#2a5298;
+    --accent-3:#ff8c00;
+    --maxw:1000px;
+    --radius:12px;
+    --gap:20px;
+    --text:#17202a;
+    --legal:#5a6a73;
+    --accent-contrast:#ffffff;
+}
+
+/* === BODY === */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+
+
+/* === NAVBAR === */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
+}
+
+nav .logo {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffd700;
+}
+
+/* === PAGE === */
+.page {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: auto;
+    padding: 20px;
+}
+
+/* === HEADER BRAND === */
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.brand img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.brand h1 {
+    font-size: 20px;
+    margin: 0;
+    color: rgb(255, 255, 255)
+    
+}
+
+.brand p {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    align-items: center;
+
+}
+
+/* === CARD === */
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 28px rgba(20,35,60,0.06);
+    padding: 28px;
+}
+
+/* === TEXT STYLES === */
+h2 {
+    color: var(--accent-2);
+    margin: 16px 0 8px;
+    font-size: 18px;
+}
+
+h3 {
+    margin: 14px 0 6px;
+    font-size: 15px;
+    color: var(--text);
+}
+
+p {
+    margin: 10px 0;
+    color: var(--muted);
+}
+
+ul {
+    margin: 8px 0 12px 20px;
+    color: var(--muted);
+}
+
+li {
+    margin: 6px 0;
+}
+
+/* === META ROW === */
+.meta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.updated {
+    font-size: 13px;
+    color: var(--legal);
+}
+
+/* === NOTICE BLOCK === */
+.notice {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+    color: var(--accent-contrast);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(42,82,152,0.12);
+}
+
+/* === CONTACT BOX === */
+.contact-box {
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #fbfbfd, #fff);
+    border: 1px solid rgba(30,60,114,0.06);
+}
+
+.contact-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-row a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.yozuv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255)
+}
+.muted-small {
+    font-size: 13px;
+    color: var(--legal);
+}
+
+/* === FOOTER (NAV BAR BILAN BIR XIL RANG) === */
+.site-foot {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    padding: 18px 0;
+    color: white;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+/* === RESPONSIVE === */
+@media (max-width:720px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}

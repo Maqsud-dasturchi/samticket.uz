@@ -1,0 +1,181 @@
+/* Asosiy sozlamalar va shriflar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Asosiy ko'k rang */
+    --text-color: #343a40; /* To'q matn rangi */
+    --background-color: #f8f9fa; /* Yengil fon */
+    --card-background: #ffffff; /* Kartochka fon rangi */
+    --secondary-color: #6c757d; /* Kulrang matn */
+    --border-color: #ced4da;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 80px; /* Footer uchun joy */
+}
+
+/* Konteyner */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Orqaga qaytish tugmasi */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #0056b3;
+}
+
+.back-btn i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Sarlavha */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.last-updated {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* Shartlar Kontenti */
+.terms-content {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.term-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.term-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.term-section h2 {
+    font-size: 1.6em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+.term-section p {
+    margin-bottom: 15px;
+}
+
+.term-section ul {
+    margin: 15px 0 15px 20px;
+    list-style-type: disc;
+}
+
+.term-section li {
+    margin-bottom: 8px;
+}
+
+/* Aloqa chaqiruvi */
+.contact-prompt {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.contact-prompt p {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    z-index: 1000;
+}
+
+/* Media Queries (Mobil uchun moslashuv) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .terms-content {
+        padding: 20px;
+    }
+    
+    .term-section h2 {
+        font-size: 1.4em;
+    }
+
+    .btn-contact {
+        width: 90%;
+    }
+}

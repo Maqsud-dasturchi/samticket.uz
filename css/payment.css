@@ -1,0 +1,168 @@
+/*
+ * payment.css
+ * To'lov sahifasi uchun uslublar
+ */
+
+.payment-main-container {
+    padding: 40px 0;
+    background-color: #f4f7f9;
+}
+
+.payment-layout-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Qisqa kontent tepada turadi */
+    margin-top: 20px;
+}
+
+.payment-form-section {
+    flex: 2; /* Formaga ko'proq joy berish */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.payment-form-section h2 {
+    color: #007bff;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* --- Forma Uslublari --- */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    outline: none;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-inline .form-group {
+    flex: 1;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #e0e0e0;
+    margin: 30px 0;
+}
+
+/* --- To'lov Tafsilotlari Uslubi --- */
+
+.payment-details-group {
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #eaf4ff;
+}
+
+.info-message {
+    color: #0056b3;
+    font-size: 0.95rem;
+    padding: 5px 0;
+}
+
+/* --- Xato Xabari --- */
+.error-message {
+    background-color: #fdd;
+    color: #d9534f;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --- Xulosa Karta Uslubi --- */
+
+.payment-summary-card {
+    flex: 1; /* Xulosa kartaga kamroq joy berish */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #28a745; /* Yashil chiziq */
+}
+
+.payment-summary-card h3 {
+    color: #28a745;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 1rem;
+}
+
+.summary-line.special {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.summary-line.total-line {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #dc3545; /* Jami narxni qizil qilish */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.loading-message {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 20px;
+}
+
+
+/* --- Responsivlik (Telefonlar uchun) --- */
+@media (max-width: 900px) {
+    .payment-layout-wrapper {
+        flex-direction: column;
+    }
+
+    .payment-summary-card {
+        order: -1; /* Xulosa telefonlarda yuqoriga chiqadi */
+    }
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark"> <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Panel — Samticket</title>
+  <link rel="stylesheet" href="./css/admin.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div class="brand-title">Samticket</div>
+          <div class="brand-sub">Admin</div>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button class="menu-item active" data-page="dashboard">🏠 Dashboard</button>
+        <button class="menu-item" data-page="events">🎫 Events</button>
+        <button class="menu-item" data-page="users">👥 Users</button>
+        <button class="menu-item" data-page="orders">🛒 Orders</button>
+        <button class="menu-item" data-page="complaints">📧 Shikoyatlar</button>
+        <button class="menu-item" data-page="settings">⚙️ Settings</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div id="adminName" class="admin-name">Admin</div>
+        <button id="logoutBtn" class="btn-ghost">Log out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="search-wrap">
+          <input id="globalSearch" type="search" placeholder="Search events, users, orders..." />
+        </div>
+        <div class="top-actions">
+          <div class="chip" id="connectedUser"></div>
+          <button id="themeToggle" class="icon-btn" title="Toggle theme">🌓</button>
+        </div>
+      </header>
+
+      <div class="pages-container">
+
+        <section class="page" id="dashboardPage">
+          <div class="page-header">
+            <h1>Dashboard</h1>
+            <p class="muted">Welcome back. Overview of the platform</p>
+          </div>
+
+          <div class="cards">
+            <div class="card hover">
+              <div class="card-title">Total Events</div>
+              <div class="card-value" id="cardEvents">0</div>
+            </div>
+            <div class="card hover">
+              <div class="card-title">Total Users</div>
+              <div class="card-value" id="cardUsers">0</div>
+            </div>
+            <div class="card hover">
+              <div class="card-title">Sold Tickets</div>
+              <div class="card-value" id="cardTickets">0</div>
+            </div>
+            <div class="card hover accent-bg">
+              <div class="card-title">Total Revenue</div>
+              <div class="card-value" id="cardRevenue">0 so'm</div>
+            </div>
+            <div class="card hover warning-bg">
+              <div class="card-title">Yangi Shikoyatlar</div>
+              <div class="card-value" id="cardComplaints">0</div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel chart-panel">
+              <h3>Monthly Revenue</h3>
+              <canvas id="revenueChart" height="200"></canvas>
+            </div>
+
+            <div class="panel">
+              <h3>Latest Orders</h3>
+              <ul id="latestOrders" class="list"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="page hidden" id="eventsPage">
+          <div class="page-header">
+            <h1>Events</h1>
+            <div class="page-actions">
+              <button id="openAddEvent" class="btn primary">+ New Event</button>
+              <select id="filterType">
+                <option value="all">All types</option>
+                <option>Sport</option>
+                <option>Festival</option>
+                <option>Konsert</option>
+                <option>Teatr</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="events-controls">
+              <input id="eventsSearch" type="search" placeholder="Search events..." />
+            </div>
+
+            <div id="eventsGrid" class="events-grid"></div>
+          </div>
+        </section>
+
+        <section class="page hidden" id="usersPage">
+          <div class="page-header">
+            <h1>Users</h1>
+            <p class="muted">Manage registered users</p>
+          </div>
+
+          <div class="panel">
+            <div class="table-wrap">
+              <table class="table" id="usersTable">
+                <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Registered</th><th>Actions</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="page hidden" id="ordersPage">
+          <div class="page-header">
+            <h1>Orders</h1>
+            <p class="muted">All purchase history</p>
+          </div>
+
+          <div class="panel">
+            <div class="table-wrap">
+              <table class="table" id="ordersTable">
+                <thead><tr><th>ID</th><th>User</th><th>Event</th><th>Qty</th><th>Price</th><th>Date</th><th>Actions</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        
+        <section class="page hidden" id="complaintsPage">
+          <div class="page-header">
+            <h1>📧 Shikoyatlar</h1>
+            <p class="muted">Foydalanuvchilarning barcha murojaatlari</p>
+          </div>
+
+          <div class="panel">
+            <div class="table-wrap">
+              <table class="table" id="complaintsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Yuboruvchi</th>
+                        <th>Mavzu</th>
+                        <th>Sana</th>
+                        <th>Holat</th>
+                        <th>Harakat</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="page hidden" id="settingsPage">
+          <div class="page-header">
+            <h1>Settings</h1>
+            <p class="muted">Site configuration (stored in localStorage)</p>
+          </div>
+
+          <div class="panel settings-panel">
+            <label for="siteTitle">Site Title</label>
+            <input id="siteTitle" type="text" placeholder="Site title" />
+
+            <label for="footerText">Footer Text</label>
+            <input id="footerText" type="text" placeholder="Footer text" />
+
+            <div style="margin-top:20px">
+              <button id="saveSettings" class="btn primary">Save Settings</button>
+            </div>
+          </div>
+        </section>
+      </div> </main>
+  </div>
+
+  <div class="modal" id="eventModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="modalTitle">New Event</h3>
+        <button class="icon-btn close-modal-btn" id="closeModal">✕</button>
+      </div>
+
+      <form id="eventForm" class="form-grid">
+        <input type="hidden" id="evId">
+
+        <label for="evTitle">Title</label>
+        <input id="evTitle" required />
+
+        <label for="evType">Type</label>
+        <select id="evType">
+          <option>Sport</option><option>Festival</option><option>Konsert</option><option>Teatr</option>
+        </select>
+
+        <label for="evDate">Date & Time</label>
+        <input id="evDate" type="datetime-local" required />
+
+        <label for="evLocation">Location</label>
+        <input id="evLocation" required />
+
+        <label for="evPrice">Price (so'm)</label>
+        <input id="evPrice" type="number" min="0" required />
+
+        <label for="evTickets">Tickets total</label>
+        <input id="evTickets" type="number" min="0" required />
+
+        <label for="evImageUrl">Image (URL)</label>
+        <input id="evImageUrl" type="url" placeholder="https://..." />
+
+        <label for="evImageFile">Or upload image</label>
+        <input id="evImageFile" type="file" accept="image/*" />
+
+        <div class="img-preview-wrap">
+          <img id="imgPreview" alt="Preview" />
+        </div>
+
+        <label for="evDesc">Description</label>
+        <textarea id="evDesc"></textarea>
+
+        <div class="modal-actions">
+          <button id="saveEvent" class="btn primary" type="button">Save</button>
+          <button id="cancelEvent" class="btn ghost" type="button">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="complaintsModal" aria-hidden="true">
+    <div class="modal-card" style="max-width: 700px;">
+        <div class="modal-head">
+            <h3>Shikoyat Tafsilotlari</h3>
+            <button class="icon-btn close-modal-btn" id="closeComplaintsModal">✕</button>
+        </div>
+        <div id="complaintDetails" class="complaint-details-content">
+            </div>
+    </div>
+  </div>
+
+  <script src="./js/admin.js"></script>
+</body>
+</html>

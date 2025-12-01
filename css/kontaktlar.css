@@ -1,0 +1,339 @@
+/* Asosiy sozlamalar va shriftlar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Asosiy ko'k rang */
+    --secondary-color: #6c757d; /* Kulrang */
+    --background-color: #f8f9fa; /* Yengil fon */
+    --card-background: #ffffff; /* Kartochka fon rangi */
+    --text-color: #343a40; /* To'q matn rangi */
+    --border-color: #ced4da; /* Chegara rangi */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 80px; 
+}
+
+/* Konteyner */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Orqaga qaytish tugmasi */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #0056b3;
+}
+
+.back-btn i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Sarlavha */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Kontaktlar tarmog'i (Grid) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Chap (Ma'lumot) va O'ng (Forma/Xarita) */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Kontakt ma'lumotlari qismi (Chap ustun) */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start; /* Ma'lumotlar yuqoridan boshlansin */
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+}
+
+.contact-icon {
+    background-color: var(--primary-color);
+    color: white;
+    min-width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    margin-right: 15px;
+}
+
+.contact-details h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.contact-details p {
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+/* Operatorlar uchun maxsus uslub */
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Manzil uchun xaritada ko'rish tugmasi */
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #28a745; /* Yashil rang */
+    margin-top: 5px;
+}
+.map-link i {
+    margin-right: 5px;
+}
+
+/* Forma va Xarita konteyneri (O'ng ustun) */
+.form-and-map {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Kontakt formasi */
+.contact-form {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Xarita Konteyneri */
+.map-container {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.map-container h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.map-container iframe {
+    display: block;
+    border-radius: 6px;
+    width: 100%;
+    min-height: 350px;
+}
+
+/* Tugma va Status */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn i {
+    margin-right: 10px;
+}
+
+.message-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    visibility: hidden; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Ijtimoiy tarmoq havolalari */
+.social-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-link {
+    display: inline-block;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 45px; 
+    font-size: 1.2em;
+    margin: 0 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:nth-child(1) { /* Telegram */
+    background-color: #0088cc;
+}
+
+.social-link:nth-child(2) { /* Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-link:nth-child(3) { /* Facebook */
+    background-color: #3b5998;
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    z-index: 1000;
+}
+
+/* Media Queries (Mobil uchun moslashuv) */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Kichik ekranlarda 1 ustun */
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .contact-item {
+        padding: 15px;
+    }
+    
+    .contact-details h3 {
+        font-size: 1em;
+    }
+    
+    .contact-details p {
+        font-size: 0.9em;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+}

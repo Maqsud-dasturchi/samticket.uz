@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SamTicket.uz - Onlayn chipta xaridi</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./assets/logos/logo.png" alt="SamTicket">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Bosh Sahifa</a></li>
+                    <li><a href="./events.html" class="protected-btn" onclick="checkAuth('')">Tadbirlar</a></li>
+                    <li id="adminNavItem" style="display: none;">
+                        <a href="#" onclick="checkAuth('../admin/admin.html')">Admin Panel</a>
+                    </li>
+                    <li><a href="./help/help.html" class="protected-btn" onclick="checkAuth('../pages/help.html')">Yordam</a></li>
+                    <li id="authNavItem">
+                        <span class="user-welcome" id="userWelcome"></span>
+                    <span id="user-info"></span>
+                        <a href="./register.html" class="btn secondary logout-btn">Chiqish</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Stadion va konsert zallariga onlayn chipta xaridi</h1>
+            <p>Barcha sport va madaniy tadbirlar uchun chiptalarni bir joydan xarid qiling</p>
+            <div class="hero-buttons">
+                <a href="./events.html" class="btn primary" class="protected-btn" onclick="checkAuth('')">Tadbirlarni Ko'rish</a>
+                <div id="register-btn-container">
+            <nav>
+    <div class="nav-actions">
+        <a href="register.html" id="register-btn" class="nav-button primary-btn">
+            Kirish / Ro'yxatdan o'tish
+        </a>
+
+        <a href="admin.html" class="admin-link nav-link" style="display:none;">Admin Paneli</a>
+        
+        <span id="user-info" class="user-greeting"></span>
+    </div>
+</nav>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Xizmatlar Section -->
+    <section class="main-services">
+    <div class="container">
+        <h2 class="section-title">SamTicket bilan chipta xarid qilish oson</h2>
+        <div class="services-steps">
+
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">👤</div>
+                <h3>Ro'yxatdan o'ting</h3>
+                <p>Bir daqiqada ro'yxatdan o'ting yoki tizimga kiring.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">🔍</div>
+                <h3>Tadbirni qidiring</h3>
+                <p>Barcha sport va madaniy tadbirlar ro'yxatini ko'rib chiqing.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">💺</div>
+                <h3>Joyni tanlang</h3>
+                <p>O'zingizga mos kelgan joyni yoki chipta toifasini tanlang.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-icon">🛒</div>
+                <h3>Savatga qo'shing</h3>
+                <p>Tanlovni yakunlab, barcha chiptalaringizni savatga o'tkazing.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-icon">💳</div>
+                <h3>To'lovni amalga oshiring</h3>
+                <p>Qulay usulda (karta orqali yoki boshqa) xaridni tasdiqlang.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <div class="step-icon">🎫</div>
+                <h3>Chiptani oling</h3>
+                <p>Elektron chiptangizni oling va tadbirdan bahramand bo'ling!</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section class="features">
+    <div class="container">
+        <h2 class="section-title">Nega SamTicketni tanlashadi?</h2>
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Tez va Oson</h3>
+                <p>Chiptani bir necha oddiy bosqichda, qisqa vaqt ichida xarid qiling.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Xavfsizlik Kafolati</h3>
+                <p>Shaxsiy ma'lumotlaringiz va to'lovlaringiz maxfiyligi to'liq himoyalangan.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎉</div>
+                <h3>Keng Tadbirlar Tanlovi</h3>
+                <p>Barcha turdagi sport, madaniy va ko'ngilochar tadbirlarga chiptalar.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobil Qulaylik</h3>
+                <p>Veb-sayt har qanday qurilma (telefon, planshet) uchun to'liq moslashgan.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Rasmiy Chiptalar</h3>
+                <p>Tadbir tashkilotchilari bilan to'g'ridan-to'g'ri hamkorlik, soxta chipta xavfi yo'q.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Qo'llab-quvvatlash</h3>
+                <p>Savol va muammolar yuzasidan istalgan vaqtda yordam olish imkoniyati.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SamTicket</h3>
+                    <div class="social-links">
+                        <a href="#"><img class="logos_footer" src="./assets/logos/telegram.png" alt="Telegram"></a>
+                        <a href="#"><img  class="logos_footer" src="./assets/logos/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img  class="logos_footer" src="./assets/logos/facebook.png" alt="Facebook"></a>
+                    </div>
+                    <p>O'zbekistondagi barcha sport va madaniy tadbirlar uchun onlayn chipta xarid qilish platformasi.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Foydali Havolalar</h3>
+                    <ul class="footer-links">
+                        <li><a href="./about/about.html">Biz haqimizda</a></li>
+                        <li><a href="./kontaktlar.html">Kontaktlar</a></li>
+                        <li><a href="./term.html">Foydalanish shartlari</a></li>
+                        <li><a href="./privacy/privacy.html">Maxfiylik siyosati</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Aloqa</h3>
+                    <ul class="footer-contacts">
+                        <li>📧 info@samticket.uz</li>
+                        <li>📞 +998 93 367 05 18</li>
+                        <li>📍 Samarqand sh., Usta Umarqul k., 138-uy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 SamTicket.uz. Barcha huquqlar himoyalangan.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

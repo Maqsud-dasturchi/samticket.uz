@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savat | Samticket.uz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/cart.css"> 
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div><img class="logo" src="./assets/logos/logo.png" alt="Samticket.uz"></div>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Bosh Sahifa</a></li>
+                    <li><a href="./events.html">Tadbirlar</a></li>
+                    <li><a href="./cart.html">🛒 Savat</a></li>
+                    <li id="auth-link-container"></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="cart-main-container">
+        <div class="container">
+            <h1>🛒 Savatingiz</h1>
+
+            <section class="cart-content-wrapper">
+                
+                <div class="cart-items-list">
+                    <h2>Tanlangan chiptalar</h2>
+                    
+                    <div id="cart-items-container" class="cart-items-container">
+                        </div>
+
+                    <div id="cart-empty-message" class="cart-empty-message" style="display:none;">
+                        <p><i class="fas fa-box-open"></i> Savatingiz bo'sh. Tadbirlarni ko'rib chiqing!</p>
+                        <a href="./events.html" class="btn secondary-btn mt-3">Tadbirlarni ko'rish</a>
+                    </div>
+                </div>
+                
+                <aside class="cart-summary-card">
+                    <h2>Xulosa</h2>
+                    
+                    <div class="summary-line total-line">
+                        <span class="label">Jami Narx:</span>
+                        <strong id="cart-total">0 UZS</strong>
+                    </div>
+
+                    <button id="checkout-btn" class="btn primary-btn checkout-btn" disabled>
+                        <i class="fas fa-credit-card"></i> Buyurtmani Rasmiylashtirish
+                    </button>
+                    
+                    <button id="clear-cart-btn" class="btn danger-btn clear-cart-btn">
+                        <i class="fas fa-trash-alt"></i> Savatni Tozalash
+                    </button>
+
+                    <p class="summary-note">Buyurtmani rasmiylashtirish uchun kamida bitta chipta tanlang.</p>
+                </aside>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">© 2025 Samticket. Barcha huquqlar himoyalangan.</div>
+    </footer>
+    
+    <script src="./js/common.js"></script> 
+    <script src="./js/cart.js"></script>
+    <script src="./js/event_detail.js"></script> 
+</body>
+</html>

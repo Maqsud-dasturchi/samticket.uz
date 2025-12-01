@@ -1,0 +1,150 @@
+/* --- Asosiy Tartib (Layout) --- */
+.cart-main-container {
+    padding: 40px 0;
+}
+
+.cart-content-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    /* Kichik ekranlar uchun tartibni o'zgartirish */
+    flex-wrap: wrap; 
+}
+
+.cart-items-list {
+    flex: 2; /* Ro'yxat asosiy qismni egallaydi */
+    min-width: 300px;
+}
+
+.cart-summary-card {
+    flex: 1; /* Xulosa qismi */
+    min-width: 250px;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Faqat ichidagi kontent hajmini egallaydi */
+}
+
+/* --- Savat Elementlari Stili (Cart Item) --- */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.item-type, .item-price {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.cart-seat-info {
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: right;
+}
+
+.item-total-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #28a745; /* Yashil rang - yakuniy narx */
+}
+
+/* --- Xulosa Qismi Stili (Summary) --- */
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+.total-line {
+    border-top: 2px solid #ddd;
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.total-line strong {
+    color: #dc3545; /* Qizil rang - umumiy narxni ta'kidlash */
+}
+
+/* Tugmalar */
+.checkout-btn, .clear-cart-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.clear-cart-btn {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Savat Bo'sh Xabari */
+.cart-empty-message {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cart-empty-message i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Media Query: Mobil ekranlar uchun tartibni stack qilish */
+@media (max-width: 768px) {
+    .cart-content-wrapper {
+        flex-direction: column;
+    }
+    .cart-summary-card {
+        order: -1; /* Xulosani tepaga o'tkazish */
+        min-width: 100%;
+    }
+    .item-actions {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .item-total-price {
+        margin-bottom: 5px;
+    }
+}

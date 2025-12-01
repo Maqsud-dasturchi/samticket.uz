@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tadbirlar - Samticket.uz</title>
+    <link rel="stylesheet" href="./css/events.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <div><img class="logo" src="./assets/logos/logo.png" alt="Samticket.uz"></div>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Bosh Sahifa</a></li>
+                    <li><a href="./events.html" class="active">Tadbirlar</a></li>
+                    <li id="adminNavItem" style="display: none;">
+                        <a href="#" onclick="checkAuth('../admin/admin.html')">Admin Panel</a>
+                    </li>
+                    <li><a href="./help/help.html" onclick="checkAuth('../pages/help.html')">Yordam</a></li>
+                    <li id="authNavItem">
+                        <span class="user-welcome" id="userWelcome"></span>
+                        <a href="./register.html" class="logout-btn">Chiqish</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+        </div>
+   
+    <!-- Filter Section -->
+    <div class="events-filter">
+    <div class="filter-buttons">
+        <button class="active" data-type="all">Barchasi</button>
+        <button data-type="Sport">Sport</button>
+        <button data-type="Festival">Festival</button>
+        <button data-type="Konsert">Konsert</button>
+        <button data-type="Teatr">Teatr</button>
+    </div>
+</div>
+<div id="eventsGrid" class="events-grid"></div>
+
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="events-grid" id="eventsGrid">
+                <!-- Tadbirlar shu yerga JS orqali tushadi -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SamTicket</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <img src="./assets/logos/telegram.png" alt="Telegram" width="24" height="24">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <img src="./assets/logos/instagram.png" alt="Instagram" width="24" height="24">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="./assets/logos/facebook.png" alt="Facebook" width="24" height="24">
+                        </a>
+                    </div>
+                    <p>O'zbekistondagi barcha sport va madaniy tadbirlar uchun onlayn chipta xarid qilish platformasi.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Foydali Havolalar</h3>
+                    <ul class="footer-links">
+                        <li><a href="./about/about.html">Biz Haqimizda</a></li>
+                        <li><a href="./kontaktlar.html">Kontaktlar</a></li>
+                        <li><a href="./term.html">foydalanish shartlari</a></li>
+                        <li><a href="./privacy/privacy.html">Maxfiylik Siyosati</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Aloqa</h3>
+                    <ul class="footer-contacts">
+                        <li class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <div>info@samticket.uz</div>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong>Telefon</strong>
+                                <div>+998 93 367 05 18</div>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <strong>Manzil</strong>
+                                <div>Samarqand sh., Usta Umarqul k., 138-uy</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 SamTicket.uz. Barcha huquqlar himoyalangan.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./js/data.js"></script>
+     <script src="./js/events.js"></script>
+    
+</body>
+</html>

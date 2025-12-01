@@ -1,0 +1,59 @@
+.success-main-container {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.success-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #d4edda;
+    border-radius: 15px;
+    background-color: #f8f8f8;
+    box-shadow: 0 5px 15px rgba(0, 128, 0, 0.1);
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #28a745; /* Yashil rang */
+    margin-bottom: 20px;
+}
+
+.success-card h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.message {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.order-details-box {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px auto;
+    max-width: 350px;
+}
+
+.order-details-box strong {
+    font-size: 1.5rem;
+    color: #007bff;
+    display: block;
+    margin-top: 5px;
+}
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}

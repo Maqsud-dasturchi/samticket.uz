@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yordam - Samticket.uz</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div><img class="logo" src="../assets/logos/logo.png" alt="MRUz Logo"></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Bosh Sahifa</a></li>
+                    <li><a href="../events.html">Tadbirlar</a></li>
+                    <li><a href="help.html" class="active">Yordam</a></li>
+                    <li id="authNavItem">
+                        <span class="user-welcome" id="userWelcome"></span>
+                        <a href="../register.html" class="logout-btn">Chiqish</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <ul class="mobile-nav-links">
+                    <li><a href="../index/index.html">Bosh Sahifa</a></li>
+                    <li><a href="../party/party.html">Tadbirlar</a></li>
+                    <li><a href="help.html" class="active">Yordam</a></li>
+                    <li id="mobileAuthNavItem">
+                        <span class="user-welcome" id="mobileUserWelcome"></span>
+                        <a href="../account/account.html" class="mobile-logout-btn">Chiqish</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="help-container">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="help-hero">
+                <div class="hero-content">
+                    <h1>Qanday Yordam Kerak?</h1>
+                    <p>Samticket.uz da chipta sotib olish, to'lov qilish va boshqa savollaringizga javob toping</p>
+                    <div class="search-box">
+                        <input type="text" id="helpSearch" placeholder="Savolingizni yozing...">
+                        <button class="search-btn">Qidirish</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-icon">🎫</div>
+                    <div class="floating-icon">❓</div>
+                    <div class="floating-icon">💬</div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Tezkor Harakatlar</h2>
+                <div class="actions-grid">
+                    <div class="action-card" onclick="scrollToSection('chipta-sotib-olish')">
+                        <div class="action-icon">🛒</div>
+                        <h3>Chipta Sotib Olish</h3>
+                        <p>Chipta qanday sotib olish kerakligi haqida batafsil</p>
+                    </div>
+                    <div class="action-card" onclick="scrollToSection('tolov-usullari')">
+                        <div class="action-icon">💳</div>
+                        <h3>To'lov Usullari</h3>
+                        <p>Qanday to'lov usullari mavjud</p>
+                    </div>
+                    <div class="action-card" onclick="scrollToSection('chiptani-tekshirish')">
+                        <div class="action-icon">✅</div>
+                        <h3>Chiptani Tekshirish</h3>
+                        <p>Chiptangizni qanday tekshirish kerak</p>
+                    </div>
+                    <div class="action-card" onclick="showContactForm()">
+                        <div class="action-icon">📞</div>
+                        <h3>Aloqa</h3>
+                        <p>Biz bilan bog'laning</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>Ko'p Beriladigan Savollar</h2>
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">Hammasi</button>
+                    <button class="category-btn" data-category="chipta">Chiptalar</button>
+                    <button class="category-btn" data-category="tolov">To'lov</button>
+                    <button class="category-btn" data-category="hisob">Hisob</button>
+                    <button class="category-btn" data-category="boshqa">Boshqa</button>
+                </div>
+
+                <div class="faq-container">
+                    <!-- Chipta sotib olish -->
+                    <div class="faq-item" data-category="chipta" id="chipta-sotib-olish">
+                        <div class="faq-question">
+                            <h3>Chiptani qanday sotib olishim mumkin?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Chipta sotib olish uchun quyidagi amallarni bajaring:</p>
+                            <ol>
+                                <li><strong>Tadbirlar sahifasiga</strong> o'ting</li>
+                                <li>Kerakli tadbirni <strong>tanlang</strong></li>
+                                <li><strong>"Chipta sotib olish"</strong> tugmasini bosing</li>
+                                <li>To'lov sahifasida <strong>to'lov ma'lumotlarini</strong> kiriting</li>
+                                <li>To'lovni <strong>tasdiqlang</strong></li>
+                            </ol>
+                            <div class="faq-tip">
+                                💡 <strong>Maslahat:</strong> Chiptani oldindan sotib oling, chunki mashhur tadbirlar tez sotiladi!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="chipta">
+                        <div class="faq-question">
+                            <h3>Chiptani qaytarib olishim mumkinmi?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Chiptalarni qaytarish quyidagi shartlar asosida amalga oshiriladi:</p>
+                            <ul>
+                                <li><strong>72 soat ichida</strong> - 100% qaytariladi</li>
+                                <li><strong>3-7 kun ichida</strong> - 50% qaytariladi</li>
+                                <li><strong>Tadbirdan 1 hafta oldin</strong> - 25% qaytariladi</li>
+                                <li><strong>Tadbirdan kamroq vaqt qolganda</strong> - qaytarilmaydi</li>
+                            </ul>
+                            <div class="faq-warning">
+                                ⚠️ <strong>Diqqat:</strong> Maxsus tadbirlar (konsertlar, sport) uchun qaytarish shartlari farq qilishi mumkin.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="chipta" id="chiptani-tekshirish">
+                        <div class="faq-question">
+                            <h3>Chiptam haqiqiyligini qanday tekshirishim mumkin?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Chiptangizning haqiqiyligini quyidagi usullar bilan tekshiring:</p>
+                            <div class="verification-methods">
+                                <div class="method">
+                                    <h4>📱 QR Kod</h4>
+                                    <p>Chiptangizdagi QR kodni tadbir joyidagi skaner bilan skanerlang</p>
+                                </div>
+                                <div class="method">
+                                    <h4>🔢 ID Raqam</h4>
+                                    <p>Chipta ID raqamingizni <a href="#" onclick="showVerificationModal()">bu yerda</a> tekshiring</p>
+                                </div>
+                                <div class="method">
+                                    <h4>📧 Email</h4>
+                                    <p>Sotib olish paytida kiritilgan emailga yuborilgan tasdiqlash xatini ko'ring</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- To'lov usullari -->
+                    <div class="faq-item" data-category="tolov" id="tolov-usullari">
+                        <div class="faq-question">
+                            <h3>Qanday to'lov usullari mavjud?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Biz quyidagi to'lov usullarini qo'llab-quvvatlaymiz:</p>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <div class="payment-icon">💳</div>
+                                    <div>
+                                        <h4>Bank Kartalari</h4>
+                                        <p>Visa, MasterCard, UnionPay</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-icon">📱</div>
+                                    <div>
+                                        <h4>Mobile To'lov</h4>
+                                        <p>Payme, Click, Uzumbile</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-icon">🏦</div>
+                                    <div>
+                                        <h4>Onlayn Bank</h4>
+                                        <p>Kapital Bank, Ipak Yuli Bank</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-icon">💰</div>
+                                    <div>
+                                        <h4>Naqd Pul</h4>
+                                        <p>Ofisimizga kelib to'lash</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="tolov">
+                        <div class="faq-question">
+                            <h3>To'lov xavfsizligi qanday ta'minlanadi?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Biz sizning to'lov ma'lumotlaringizni quyidagi usullar bilan himoya qilamiz:</p>
+                            <ul>
+                                <li><strong>SSL Shifrlash</strong> - barcha ma'lumotlar shifrlangan</li>
+                                <li><strong>PCI DSS Standart</strong> - xalqaro to'lov xavfsizlik standarti</li>
+                                <li><strong>Ikki bosqichli autentifikatsiya</strong></li>
+                                <li><strong>Real-time monitoring</strong> - shubhali harakatlarni kuzatish</li>
+                            </ul>
+                            <div class="security-badge">
+                                🔒 <strong>100% Xavfsiz</strong> - Hech qanday karta ma'lumotlari saqlanmaydi
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hisob sozlamalari -->
+                    <div class="faq-item" data-category="hisob">
+                        <div class="faq-question">
+                            <h3>Parolni qanday tiklashim mumkin?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Parolni tiklash uchun:</p>
+                            <ol>
+                                <li><strong>Kirish sahifasida</strong> "Parolni unutdingizmi?" tugmasini bosing</li>
+                                <li><strong>Email manzilingizni</strong> kiriting</li>
+                                <li>Emailingizga yuborilgan <strong>havolani</strong> bosing</li>
+                                <li>Yangi parol <strong>yarating</strong></li>
+                                <li>Yangi parol bilan <strong>tizimga kiring</strong></li>
+                            </ol>
+                            <button class="btn btn-small" onclick="showPasswordResetModal()">Parolni tiklash</button>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="hisob">
+                        <div class="faq-question">
+                            <h3>Hisobimni qanday o'chirishim mumkin?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Hisobingizni o'chirish uchun quyidagi amallarni bajaring:</p>
+                            <ol>
+                                <li>Profil sahifangizga o'ting</li>
+                                <li>"Sozlamalar" bo'limiga o'ting</li>
+                                <li>"Hisobni o'chirish" tugmasini bosing</li>
+                                <li>O'chirishni tasdiqlang</li>
+                            </ol>
+                            <div class="faq-warning">
+                                ⚠️ <strong>Diqqat:</strong> Hisob o'chirilganda barcha ma'lumotlar butunlay yo'q qilinadi va qayta tiklab bo'lmaydi.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Boshqa savollar -->
+                    <div class="faq-item" data-category="boshqa">
+                        <div class="faq-question">
+                            <h3>Tadbir bekor qilinsa nima bo'ladi?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Agar tadbir bekor qilinsa:</p>
+                            <ul>
+                                <li><strong>Avtomatik ravishda</strong> to'lov qaytariladi</li>
+                                <li><strong>3-5 ish kunida</strong> pul hisobingizga qaytadi</li>
+                                <li><strong>Email orqali</strong> xabar olasiz</li>
+                                <li><strong>Qo'shimcha komissiya</strong> olinmaydi</li>
+                            </ul>
+                            <div class="faq-tip">
+                                💡 <strong>Maslahat:</strong> Har qanday o'zgarish haqida darhol xabar beramiz!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="boshqa">
+                        <div class="faq-question">
+                            <h3>Chiptani boshqasiga topshirishim mumkinmi?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ha, chiptani boshqasiga quyidagi tartibda topshirishingiz mumkin:</p>
+                            <ol>
+                                <li>Profilingizdagi "Mening chiptalarim" bo'limiga o'ting</li>
+                                <li>Topshirmoqchi bo'lgan chiptani tanlang</li>
+                                <li>"Boshqasiga topshirish" tugmasini bosing</li>
+                                <li>Yangi egasining email yoki telefon raqamini kiriting</li>
+                                <li>Tasdiqlash kodini kiriting</li>
+                            </ol>
+                            <div class="faq-note">
+                                📝 <strong>Eslatma:</strong> Chipta topshirilgandan so'ng, boshqaruv huquqi yangi egasiga o'tadi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Bog'laning</h2>
+                        <p>Agar savolingizga javob topolmagan bo'lsangiz, biz bilan bog'laning</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">📧</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>support@mruz.uz</p>
+                                    <small>24 soat ichida javob beramiz</small>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <h4>Telefon</h4>
+                                    <p>+998 93 367 05 18</p>
+                                    <small>Dushanba-Juma 9:00-18:00</small>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">💬</div>
+                                <div>
+                                    <h4>Onlayn Chat</h4>
+                                    <p>24/7 yordam</p>
+                                    <small>Hozir chatni boshlang</small>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <h4>Ofis</h4>
+                                    <p>Samarqand sh., Usta Umarqul k., 138-uy</p>
+                                    <small>Dushanba-Shanba 9:00-17:00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Xabar Yuborish</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Ismingiz</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Mavzu</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Mavzuni tanlang</option>
+                                    <option value="chipta">Chipta bilan bog'liq</option>
+                                    <option value="tolov">To'lov bilan bog'liq</option>
+                                    <option value="hisob">Hisob bilan bog'liq</option>
+                                    <option value="boshqa">Boshqa</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Xabar</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Savolingizni batafsil yozing..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Xabar yuborish</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modallar -->
+    <div id="verificationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('verificationModal')">&times;</span>
+            <h3>Chiptani Tekshirish</h3>
+            <div class="verification-form">
+                <input type="text" id="ticketId" placeholder="Chipta ID raqamini kiriting">
+                <button class="btn btn-primary" onclick="verifyTicket()">Tekshirish</button>
+            </div>
+            <div id="verificationResult" class="verification-result"></div>
+        </div>
+    </div>
+
+    <div id="passwordResetModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('passwordResetModal')">&times;</span>
+            <h3>Parolni Tiklash</h3>
+            <div class="reset-form">
+                <input type="email" id="resetEmail" placeholder="Email manzilingizni kiriting">
+                <button class="btn btn-primary" onclick="sendResetLink()">Tiklash havolasini yuborish</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-wrapper">
+            <div class="footer-box">
+                <img src="../assets/logos/logo.png" class="footer-logo" alt="MRUz Logo">
+                <p>O'zbekistondagi barcha sport va madaniy tadbirlar uchun onlayn chipta xarid qilish platformasi.</p>
+                <div class="social-icons">
+                    <a href="#"><img src="../assets/logos/telegram.png" alt="Telegram"></a>
+                    <a href="#"><img src="../assets/logos/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="../assets/logos/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Foydali Havolalar</h3>
+                <ul>
+                    <li><a href="../about/about.html">Biz Haqimizda</a></li>
+                    <li><a href="../kontaktlar.html">Kontaktlar</a></li>
+                    <li><a href="../term.htmlA">Foydalanish Shartlari</a></li>
+                    <li><a href="./privacy/privacy.html">Maxfiylik Siyosati</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Aloqa</h3>
+                <ul>
+                    <li>📧 Email: info@mruz.uz</li>
+                    <li>📞 Telefon: +998 93 367 05 18</li>
+                    <li>📍 Manzil: Samarqand sh., Usta Umarqul k., 138-uy</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            &copy; 2025 MRUZ. Barcha huquqlar himoyalangan.
+        </div>
+    </footer>
+
+    <script src="help.js"></script>
+</body>
+</html>
